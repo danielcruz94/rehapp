@@ -184,36 +184,14 @@ body {
 }
 
 /* Nivel de intensidad mejorado con rayos amarillos llamativos */
-.intensity-level {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  background: rgba(255, 193, 7, 0.1);
-  padding: 0.4rem 0.6rem;
-  border-radius: 12px;
-  flex-shrink: 0;
-  border: 1px solid rgba(255, 193, 7, 0.2);
-}
 
 .flash {
   width: 16px;
   height: 16px;
-  /* Amarillo energético y llamativo */
-  filter: brightness(0) saturate(100%) invert(78%) sepia(85%) saturate(2142%) hue-rotate(2deg) brightness(108%) contrast(102%);
-  /* Efecto de brillo y energía */
+
   animation: energyGlow 2s ease-in-out infinite alternate;
 }
 
-@keyframes energyGlow {
-  0% {
-    filter: brightness(0) saturate(100%) invert(78%) sepia(85%) saturate(2142%) hue-rotate(2deg) brightness(108%) contrast(102%);
-    transform: scale(1);
-  }
-  100% {
-    filter: brightness(0) saturate(100%) invert(85%) sepia(100%) saturate(2000%) hue-rotate(10deg) brightness(120%) contrast(110%);
-    transform: scale(1.1);
-  }
-}
 
 /* Iconos SVG para diferentes tipos de ejercicios */
 .exercise-icon-strength::before {

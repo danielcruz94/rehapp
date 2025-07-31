@@ -21,24 +21,7 @@ export default function PainSelection() {
           </div>
         </div>
 
-        <svg 
-            className="icono-flecha-arriba"
-            xmlns="http://www.w3.org/2000/svg" 
-            viewBox="0 0 24 24" 
-            width="39px" 
-            height="39px"
-        >
-            <title>Flecha hacia arriba</title>
-            <circle className="circulo" cx="12" cy="12" r="12"/>
-            <path 
-                className="flecha"
-                d="M7 14 l5-5 5 5" 
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none" 
-            />
-        </svg>
+    
       </header>
 
       <main className="selection-main">
