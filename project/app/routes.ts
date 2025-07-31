@@ -7,4 +7,5 @@ export default [
   // Añade esta línea para tu nueva ruta
   route("issued", "routes/issued.tsx"),
   route("issued/:id","routes/services.tsx"),
+  route("/exercise/upperback1","routes/videos.tsx"),
 ] satisfies RouteConfig;

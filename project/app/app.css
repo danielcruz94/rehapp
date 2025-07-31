@@ -1,15 +1,14 @@
 /* app/styles/home.css */
-
 /* Importamos una fuente de Google que se parece mucho a la de la imagen (Poppins) */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 /* Estilos para la página completa */
 body {
   margin: 0;
-  background-color: #000000; /* Fondo negro puro */
+  /* Fondo degradado elegante igual al del video player */
+  background: linear-gradient(135deg, #1f2937 0%, #000000 50%, #374151 100%);
   color: #ffffff; /* Texto blanco por defecto */
   font-family: 'Poppins', sans-serif; /* Usamos la fuente importada */
-  
   /* Centramos todo el contenido vertical y horizontalmente */
   display: flex;
   justify-content: center;
@@ -22,9 +21,9 @@ body {
 .home-page {
   display: flex;
   flex-direction: column; /* Apila los elementos verticalmente */
-  align-items: center;    /* Centra los elementos horizontalmente */
-  gap: 1.5rem;            /* Espacio entre el contenedor del logo/h2 y el botón */
-  padding: 1rem;          /* Espacio por si la pantalla es muy pequeña */
+  align-items: center; /* Centra los elementos horizontalmente */
+  gap: 1.5rem; /* Espacio entre el contenedor del logo/h2 y el botón */
+  padding: 1rem; /* Espacio por si la pantalla es muy pequeña */
 }
 
 /* El contenedor del logo y el eslogan */
@@ -39,6 +38,8 @@ body {
 .logo {
   max-width: 280px; /* Ajusta el tamaño del logo como necesites */
   height: auto;
+  /* Agregamos un sutil efecto de sombra para que se vea mejor con el fondo degradado */
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
 /* Estilo para el eslogan "De vuelta a tu mejor versión" */
@@ -48,7 +49,9 @@ body {
   color: #f0f0f0; /* Un blanco un poco menos intenso que el logo */
   margin: 0;
   position: relative;
-  top:-57px
+  top: -57px;
+  /* Agregamos una sutil sombra de texto para mejor legibilidad */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Estilo para el botón */
@@ -63,17 +66,35 @@ body {
   cursor: pointer;
   position: relative;
   top: -63px;
-  
   /* Transición suave para el efecto hover */
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  /* Agregamos una sombra sutil al botón */
+  box-shadow: 0 4px 15px rgba(110, 255, 62, 0.2);
 }
 
 /* Efecto al pasar el ratón por encima para darle vida */
-button:hover {
+.buttongreen:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(110, 255, 62, 0.5); /* Sutil brillo verde */
 }
 
-a{
+/* Enlaces sin decoración */
+a {
   text-decoration: none;
+}
+
+/* Mejoras responsivas para móviles */
+@media (max-width: 768px) {
+  .logo {
+    max-width: 220px;
+  }
+  
+  .slogan {
+    font-size: 1.1rem;
+  }
+  
+  .buttongreen {
+    font-size: 1.1rem;
+    padding: 6px 20px;
+  }
 }

@@ -1,12 +1,9 @@
-
 html, body {
   /* Hacemos que la página ocupe exactamente la altura y anchura de la pantalla */
   width: 100%;
   height: 100%;
-  
   /* CLAVE: Ocultamos cualquier desbordamiento. Esto bloquea el scroll. */
   overflow: hidden;
-
   /* Propiedades de reset que ya tenías */
   margin: 0;
   box-sizing: border-box;
@@ -21,22 +18,17 @@ body {
   background-color: #121212;
 }
 
-
-
 .exercise-page {
   /* Ocupa toda la altura y anchura de su padre (el body) */
   width: 100%;
   height: 100%;
-
   /* Propiedades de fondo que ya tenías */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-
-  align-items: center;   /* Centra horizontalmente */
-  
+  align-items: center; /* Centra horizontalmente */
   padding: 1.5rem; /* Mantiene un espacio en los bordes */
 }
 
@@ -49,8 +41,6 @@ body {
   flex-direction: column;
   gap: 0rem;
 }
-
-
 
 /* --- Header --- */
 .card-header {
@@ -67,16 +57,19 @@ body {
   gap: 1rem;
   width: 100%;
 }
+
 .header-title img {
   width: 59px;
   height: 44px;
   filter: brightness(0) invert(1);
 }
+
 .header-title h2 {
   font-size: 1.5rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* --- Diagrama Central --- */
@@ -85,60 +78,197 @@ body {
   justify-content: center;
   padding: 2.5rem 0;
 }
+
 .diagram-container img {
   max-width: 180px;
   height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
-/* --- Lista de Ejercicios --- */
+/* --- Lista de Ejercicios Mejorada --- */
 .exercise-list {
   list-style: none;
   padding: 0 1.5rem;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
+
+.exercise-item {
+  position: relative;
+}
+
 .exercise-item a {
-  background-color: #ffffff;
-  color: #000000;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  color: #1f2937;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0.7rem 0.7rem;
-  border-radius: 50px;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
   text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 700;
-  font-style: italic;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  padding-left: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
+
+.exercise-item a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(110, 255, 62, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.exercise-item a:hover::before {
+  opacity: 1;
+}
+
 .exercise-item a:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(110, 255, 62, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  border-color: rgba(110, 255, 62, 0.3);
 }
+
+/* Número del ejercicio - REMOVIDO */
+
+.exercise-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Lado izquierdo: icono y nombre */
+.exercise-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+/* Icono del ejercicio */
+.exercise-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(110, 255, 62, 0.2);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.exercise-icon svg {
+  width: 16px;
+  height: 16px;
+  color: #059669;
+}
+
+/* Nombre del ejercicio */
+.exercise-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  line-height: 1.2;
+}
+
+/* Nivel de intensidad mejorado con rayos amarillos llamativos */
 .intensity-level {
   display: flex;
+  align-items: center;
   gap: 0.25rem;
-
-  height: 20px;
+  background: rgba(255, 193, 7, 0.1);
+  padding: 0.4rem 0.6rem;
+  border-radius: 12px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 193, 7, 0.2);
 }
-.icon-intensity {
-  width: 18px;
-  height: 18px;
+
+.flash {
+  width: 16px;
+  height: 16px;
+  /* Amarillo energético y llamativo */
+  filter: brightness(0) saturate(100%) invert(78%) sepia(85%) saturate(2142%) hue-rotate(2deg) brightness(108%) contrast(102%);
+  /* Efecto de brillo y energía */
+  animation: energyGlow 2s ease-in-out infinite alternate;
 }
 
+@keyframes energyGlow {
+  0% {
+    filter: brightness(0) saturate(100%) invert(78%) sepia(85%) saturate(2142%) hue-rotate(2deg) brightness(108%) contrast(102%);
+    transform: scale(1);
+  }
+  100% {
+    filter: brightness(0) saturate(100%) invert(85%) sepia(100%) saturate(2000%) hue-rotate(10deg) brightness(120%) contrast(110%);
+    transform: scale(1.1);
+  }
+}
+
+/* Iconos SVG para diferentes tipos de ejercicios */
+.exercise-icon-strength::before {
+  content: "💪";
+  font-size: 16px;
+}
+
+.exercise-icon-flexibility::before {
+  content: "🤸";
+  font-size: 16px;
+}
+
+.exercise-icon-cardio::before {
+  content: "❤️";
+  font-size: 16px;
+}
+
+.exercise-icon-balance::before {
+  content: "⚖️";
+  font-size: 16px;
+}
+
+/* Iconos de flecha */
 .icono-flecha-arriba .circulo {
   fill: #6eff3e;
 }
+
 .icono-flecha-arriba .flecha {
   stroke: #000000;
   fill: none;
 }
 
 .icono-flecha-derecha .linea {
-    stroke: #ffffff;
-    stroke-width: 1.5;
-    fill: none;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .exercise-list {
+    padding: 0 1rem;
+    gap: 0.75rem;
+  }
+  
+  .exercise-item a {
+    padding: 0.875rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .exercise-name {
+    font-size: 0.9rem;
+  }
+  
+  .exercise-content {
+    margin-left: 0;
+  }
 }
