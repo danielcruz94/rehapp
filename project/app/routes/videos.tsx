@@ -1,18 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router"; // Corregido: useParams es de react-router-dom
 import styles from "../componentes/styles/videoplayer.css?url";
+import { data, type Exercise } from "../../data"; // Importamos Exercise para tipado
 
 export function links() {
   return [{ rel: "stylesheet", href: styles }];
 }
 
 interface VideoPlayerProps {
-  src: string;
+  // La prop 'src' no se usa, ya que la fuente se determina por la URL. 
+  // Se puede mantener o eliminar según el diseño de tu aplicación.
+  src?: string; 
   title?: string;
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({ 
-  src, 
   title = "Recupera tu vitalidad" 
 }) => {
   const navigate = useNavigate();
@@ -26,10 +28,31 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   const [volume, setVolume] = useState(1);
   const [showControls, setShowControls] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
+  const { id } = useParams();
+  
+  // Construimos la URL a buscar a partir del parámetro de la ruta.
+  const idFind = `/${id}`;
+
+  // --- INICIO DE LA CORRECCIÓN ---
+
+  // 1. Aplanamos todos los arrays de 'exercise' en un solo array.
+  const allExercises: Exercise[] = data.flatMap(painType => painType.exercise);
+  
+  // 2. Buscamos el ejercicio específico que coincida con la URL en el array aplanado.
+  const exerciseFound = allExercises.find(exercise => exercise.url === idFind);
+
+  // --- FIN DE LA CORRECCIÓN ---
+
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+
+    // Asignamos la fuente del video dinámicamente cuando el componente se monta
+    // y cuando 'exerciseFound' cambia.
+    if (exerciseFound?.video) {
+        video.src = exerciseFound.video;
+    }
 
     const handleTimeUpdate = () => {
       setProgress((video.currentTime / video.duration) * 100);
@@ -54,7 +77,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       video.removeEventListener('loadedmetadata', handleLoadedMetadata);
       video.removeEventListener('ended', handleEnded);
     };
-  }, []);
+  }, [exerciseFound]); // El efecto depende del ejercicio encontrado
 
   const togglePlayPause = () => {
     if (videoRef.current) {
@@ -121,12 +144,17 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     return `${minutes}:${seconds}`;
   };
 
+  if (!exerciseFound) {
+      return <div>Ejercicio no encontrado.</div>; // Manejo de caso donde no se encuentra el ejercicio
+  }
+
   return (
     <div className="video-page-container">
       {/* Título del video */}
       <div className="video-header">
         <h1 className="video-title">{title}</h1>
-        <p className="video-subtitle">Extensión de la espalda alta</p>
+        {/* CORRECCIÓN: Usamos el nombre del ejercicio encontrado para el subtítulo */}
+        <p className="video-subtitle">{exerciseFound.name}</p>
       </div>
 
       {/* Contenedor principal del reproductor */}
@@ -153,9 +181,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
                   onClick={() => {
                     if (videoRef.current) {
                       videoRef.current.currentTime = 0;
-                      setVideoEnded(false);
-                      setProgress(0);
-                      setCurrentTime(0);
+                      togglePlayPause(); // Vuelve a reproducir
                     }
                   }} 
                   className="replay-button"
@@ -169,7 +195,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         )}
 
         {/* Overlay de play inicial */}
-        {!isPlaying && (
+        {!isPlaying && !videoEnded && (
           <div className="play-overlay">
             <div className="play-overlay-content">
               <button onClick={togglePlayPause} className="play-button-large">
@@ -187,8 +213,9 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           className="video-element"
           onClick={togglePlayPause}
           onDoubleClick={toggleFullScreen}
+          // La fuente se asigna en useEffect para mayor control
         >
-          <source src={'https://freevideos-reapp.s3.us-east-2.amazonaws.com/Back_Excersises+/IMG_2184.MOV'} type="video/mp4" />
+          {/* El tag <source> se elimina porque asignamos `src` directamente en el video */}
           Tu navegador no soporta la reproducción de video.
         </video>
 
@@ -211,29 +238,21 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           {/* Controles principales */}
           <div className="controls-main">
             <div className="controls-left">
-              {/* Play/Pause */}
               <button onClick={togglePlayPause} className="control-button primary">
                 {isPlaying ? <PauseIcon /> : <PlayIcon />}
               </button>
-
-              {/* Skip backward */}
               <button onClick={handleSkipBackward} className="control-button">
                 <SkipBackwardIcon />
               </button>
-
-              {/* Skip forward */}
               <button onClick={handleSkipForward} className="control-button">
                 <SkipForwardIcon />
               </button>
-
-              {/* Tiempo */}
               <span className="time-display">
                 {formatTime(currentTime)} / {formatTime(duration)}
               </span>
             </div>
 
             <div className="controls-right">
-              {/* Control de volumen */}
               <div className="volume-control">
                 <VolumeIcon />
                 <input
@@ -246,8 +265,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
                   className="volume-slider"
                 />
               </div>
-
-              {/* Pantalla completa */}
               <button onClick={toggleFullScreen} className="control-button">
                 <FullScreenIcon />
               </button>
@@ -273,53 +290,15 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   );
 };
 
-// Componentes de iconos SVG
-const PlayIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
-    <path d="M8 5v14l11-7z" />
-  </svg>
-);
+// Componentes de iconos SVG (sin cambios)
+const PlayIcon = () => (<svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em"><path d="M8 5v14l11-7z" /></svg>);
+const PauseIcon = () => (<svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" /></svg>);
+const SkipBackwardIcon = () => (<svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em"><path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"/></svg>);
+const SkipForwardIcon = () => (<svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em"><path d="M12.33 20.13l1.77 1.77L24 12l-9.9-9.9-1.77 1.77L20.46 12z"/></svg>);
+const FullScreenIcon = () => (<svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" /></svg>);
+const VolumeIcon = () => (<svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>);
+const BackIcon = () => (<svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>);
+const ReplayIcon = () => (<svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>);
 
-const PauseIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
-    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-  </svg>
-);
-
-const SkipBackwardIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
-    <path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"/>
-  </svg>
-);
-
-const SkipForwardIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
-    <path d="M12.33 20.13l1.77 1.77L24 12l-9.9-9.9-1.77 1.77L20.46 12z"/>
-  </svg>
-);
-
-const FullScreenIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
-    <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
-  </svg>
-);
-
-const VolumeIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
-    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-  </svg>
-);
-
-const BackIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
-    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-  </svg>
-);
-
-const ReplayIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" height="1em" width="1em">
-    <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
-  </svg>
-);
 
 export default VideoPlayer;
