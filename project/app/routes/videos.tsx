@@ -1,15 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate, useParams } from "react-router"; // Corregido: useParams es de react-router-dom
+import { useNavigate, useParams } from "react-router"; 
 import styles from "../componentes/styles/videoplayer.css?url";
-import { data, type Exercise } from "../../data"; // Importamos Exercise para tipado
+import { data, type Exercise } from "../../data"; 
 
 export function links() {
   return [{ rel: "stylesheet", href: styles }];
 }
 
 interface VideoPlayerProps {
-  // La prop 'src' no se usa, ya que la fuente se determina por la URL. 
-  // Se puede mantener o eliminar según el diseño de tu aplicación.
+
   src?: string; 
   title?: string;
 }
@@ -30,26 +29,19 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   const [videoEnded, setVideoEnded] = useState(false);
   const { id } = useParams();
   
-  // Construimos la URL a buscar a partir del parámetro de la ruta.
   const idFind = `/${id}`;
 
-  // --- INICIO DE LA CORRECCIÓN ---
 
-  // 1. Aplanamos todos los arrays de 'exercise' en un solo array.
   const allExercises: Exercise[] = data.flatMap(painType => painType.exercise);
   
-  // 2. Buscamos el ejercicio específico que coincida con la URL en el array aplanado.
   const exerciseFound = allExercises.find(exercise => exercise.url === idFind);
 
-  // --- FIN DE LA CORRECCIÓN ---
 
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Asignamos la fuente del video dinámicamente cuando el componente se monta
-    // y cuando 'exerciseFound' cambia.
     if (exerciseFound?.video) {
         video.src = exerciseFound.video;
     }
@@ -77,14 +69,14 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       video.removeEventListener('loadedmetadata', handleLoadedMetadata);
       video.removeEventListener('ended', handleEnded);
     };
-  }, [exerciseFound]); // El efecto depende del ejercicio encontrado
+  }, [exerciseFound]); 
 
   const togglePlayPause = () => {
     if (videoRef.current) {
       if (videoRef.current.paused) {
         videoRef.current.play();
         setIsPlaying(true);
-        setVideoEnded(false); // Reset ended state when playing again
+        setVideoEnded(false);
       } else {
         videoRef.current.pause();
         setIsPlaying(false);
@@ -153,7 +145,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       {/* Título del video */}
       <div className="video-header">
         <h1 className="video-title">{title}</h1>
-        {/* CORRECCIÓN: Usamos el nombre del ejercicio encontrado para el subtítulo */}
+       
         <p className="video-subtitle">{exerciseFound.name}</p>
       </div>
 
@@ -194,7 +186,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           </div>
         )}
 
-        {/* Overlay de play inicial */}
+       
         {!isPlaying && !videoEnded && (
           <div className="play-overlay">
             <div className="play-overlay-content">
@@ -207,19 +199,18 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           </div>
         )}
         
-        {/* Elemento de video */}
+
         <video
           ref={videoRef}
           className="video-element"
           onClick={togglePlayPause}
           onDoubleClick={toggleFullScreen}
-          // La fuente se asigna en useEffect para mayor control
+         
         >
-          {/* El tag <source> se elimina porque asignamos `src` directamente en el video */}
+         
           Tu navegador no soporta la reproducción de video.
         </video>
 
-        {/* Controles del reproductor */}
         <div className={`controls-overlay ${showControls || !isPlaying ? 'visible' : 'hidden'}`}>
           {/* Barra de progreso */}
           <div className="progress-section">
@@ -235,7 +226,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
             </div>
           </div>
 
-          {/* Controles principales */}
+        
           <div className="controls-main">
             <div className="controls-left">
               <button onClick={togglePlayPause} className="control-button primary">
