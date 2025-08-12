@@ -117,9 +117,9 @@ export const data: PainType[] = [
   {
     id: 4,
     name: "Cuello",
-    icon: "/default/Capa_rodilla.svg",
+    icon: "/default/Capa_1.svg",
     description: "Selecciona si estás experimentando un dolor en el cuello.",
-    link: "issued/knee",
+    link: "issued/neck",
     img: "/default/Rehapp/img.cuello.svg",
     backgroundImage: "/background/bgRodilla.jpg",
 
@@ -148,12 +148,12 @@ export const data: PainType[] = [
     ],
   },
   {
-    id: 4,
-    name: "Muñeca",
-    icon: "/default/Capa_rodilla.svg",
+    id: 5,
+    name: "Manos",
+    icon: "/default/Capa_mano.svg",
     description: "Selecciona si estás experimentando un dolor en la muñeca.",
-    link: "issued/knee",
-    img: "/default/Rehapp/img.muñeca.svg",
+    link: "issued/wrist",
+    img: "/default/Rehapp/img.manos.png",
     backgroundImage: "/background/bgRodilla.jpg",
 
     exercise: [
@@ -181,11 +181,11 @@ export const data: PainType[] = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     name: "Hombro",
-    icon: "/default/Capa_rodilla.svg",
+    icon: "/default/Capa_hombro.svg",
     description: "Selecciona si estás experimentando un dolor en la rodilla.",
-    link: "issued/knee",
+    link: "issued/shoulder",
     img: "/default/Rehapp/img.hombro.svg",
     backgroundImage: "/background/bgRodilla.jpg",
 
@@ -214,11 +214,11 @@ export const data: PainType[] = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     name: "Tobillo",
-    icon: "/default/Capa_rodilla.svg",
+    icon: "/default/Capa_tobillo.svg",
     description: "Selecciona si estás experimentando un dolor en la rodilla.",
-    link: "issued/knee",
+    link: "issued/ankle",
     img: "/default/Rehapp/img.tobillo.svg",
     backgroundImage: "/background/bgRodilla.jpg",
 
@@ -247,11 +247,11 @@ export const data: PainType[] = [
     ],
   },
   {
-    id: 6,
+    id: 8,
     name: "Cadera",
-    icon: "/default/Capa_rodilla.svg",
+    icon: "/default/Capa_cadera.svg",
     description: "Selecciona si estás experimentando un dolor en la rodilla.",
-    link: "issued/knee",
+    link: "issued/hip",
     img: "/default/Rehapp/img.cadera.svg",
     backgroundImage: "/background/bgRodilla.jpg",
 
@@ -280,11 +280,11 @@ export const data: PainType[] = [
     ],
   },
   {
-    id: 6,
+    id: 9,
     name: "Codo",
-    icon: "/default/Capa_rodilla.svg",
+    icon: "/default/Capa_codo.svg",
     description: "Selecciona si estás experimentando un dolor en la rodilla.",
-    link: "issued/knee",
+    link: "issued/elbow",
     img: "/default/Rehapp/img.codo.svg",
     backgroundImage: "/background/bgRodilla.jpg",
 
