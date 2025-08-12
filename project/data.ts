@@ -121,7 +121,7 @@ export const data: PainType[] = [
     description: "Selecciona si estás experimentando un dolor en el cuello.",
     link: "issued/neck",
     img: "/default/Rehapp/img.cuello.svg",
-    backgroundImage: "/background/bgRodilla.jpg",
+    backgroundImage: "/background/backgroundcuello.jpg",
 
     exercise: [
       {
@@ -154,7 +154,7 @@ export const data: PainType[] = [
     description: "Selecciona si estás experimentando un dolor en la muñeca.",
     link: "issued/wrist",
     img: "/default/Rehapp/img.manos.png",
-    backgroundImage: "/background/bgRodilla.jpg",
+    backgroundImage: "/background/eee1463f38a93c246a646e79c495a57b030b133e.jpg",
 
     exercise: [
       {
@@ -166,7 +166,7 @@ export const data: PainType[] = [
       },
       {
         url: "/knee2",
-        name: "Flexo-estensión",
+        name: "Flexo-extensión",
         difficulty: "medio",
         video:
           "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2189.MOV",
@@ -187,7 +187,7 @@ export const data: PainType[] = [
     description: "Selecciona si estás experimentando un dolor en la rodilla.",
     link: "issued/shoulder",
     img: "/default/Rehapp/img.hombro.svg",
-    backgroundImage: "/background/bgRodilla.jpg",
+    backgroundImage: "/background/bgCodo.jpg",
 
     exercise: [
       {
@@ -220,7 +220,7 @@ export const data: PainType[] = [
     description: "Selecciona si estás experimentando un dolor en la rodilla.",
     link: "issued/ankle",
     img: "/default/Rehapp/img.tobillo.svg",
-    backgroundImage: "/background/bgRodilla.jpg",
+    backgroundImage: "/background/bgTobillo.jpg",
 
     exercise: [
       {
@@ -253,7 +253,7 @@ export const data: PainType[] = [
     description: "Selecciona si estás experimentando un dolor en la rodilla.",
     link: "issued/hip",
     img: "/default/Rehapp/img.cadera.svg",
-    backgroundImage: "/background/bgRodilla.jpg",
+    backgroundImage: "/background/bgCadera.jpg",
 
     exercise: [
       {
@@ -286,7 +286,7 @@ export const data: PainType[] = [
     description: "Selecciona si estás experimentando un dolor en la rodilla.",
     link: "issued/elbow",
     img: "/default/Rehapp/img.codo.svg",
-    backgroundImage: "/background/bgRodilla.jpg",
+    backgroundImage: "/background/bgCodo.jpg",
 
     exercise: [
       {
