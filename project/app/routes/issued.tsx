@@ -1,13 +1,26 @@
 import styles from "../componentes/styles/selection.css?url";
 import { data } from "../../data";
 import { Link } from "react-router";
+import type { Route } from "./+types/issued";
 
 
 export function links() {
   return [{ rel: "stylesheet", href: styles }];
 }
 
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Rehapp" },
+    { name: "we are proud", content: "Welcome to React Router!" },
 
+    // --- Objeto para el ícono ---
+    {
+      rel: "icon",
+      href: "/favicon.ico", // Ruta al ícono
+      type: "image/x-icon", // Tipo de imagen (opcional pero recomendado)
+    },
+  ];
+}
 
 export default function PainSelection() {
   return (
