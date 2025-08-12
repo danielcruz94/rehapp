@@ -20,9 +20,9 @@ export interface PainType {
 export const data: PainType[] = [
   {
     id: 1, 
-    name: "Espalda baja",
+    name: "Espalda B",
     icon: "/default/Capa_1-2.svg",
-    description: "Selecciona si estás experimentando un dolor en la espalda alta.",
+    description: "Selecciona si estás experimentando un dolor en la espalda baja.",
     link: "issued/upperback",
     img: "/default/Rehapp/img.espalda_alta.svg",
     backgroundImage: "/background/BgEspaldaAlta.jpg",
@@ -30,9 +30,9 @@ export const data: PainType[] = [
   },
   {
     id: 2, 
-    name: "Espalda alta",
+    name: "Espalda A",
     icon: "/default/Capa_1-3.svg",
-    description: "Selecciona si estás experimentando un dolor en la espalda baja.",
+    description: "Selecciona si estás experimentando un dolor en la espalda alta.",
     link: "issued/lowerback",
     img: "/default/Rehapp/img.espaldabaja.svg",
     backgroundImage: "/background/bgEspaldaBaja.jpg",
@@ -63,7 +63,7 @@ export const data: PainType[] = [
   },
   {
     id: 4,
-    name: "muñeca",
+    name: "Muñeca",
     icon: "/default/Capa_rodilla.svg",
     description: "Selecciona si estás experimentando un dolor en la rodilla.",
     link: "issued/knee",

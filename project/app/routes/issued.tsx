@@ -47,7 +47,7 @@ export default function PainSelection() {
               <Link to={`/issued/${String(option.id)}`} className="option-card">
                 <div className="option-content">
                   <img src={option.icon} alt="" className="option-icon" />
-                  <span>{option.name}</span>
+                  <span className="articulacion">{option.name}</span>
                 </div>
                 <div className="option-arrow">
                 <svg 
