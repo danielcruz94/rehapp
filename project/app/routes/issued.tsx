@@ -11,17 +11,15 @@ export function links() {
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Rehapp" },
+    { name: "viewport", content: "width=device-width, initial-scale=1.0, viewport-fit=cover" },
     { name: "we are proud", content: "Welcome to React Router!" },
-
-    // --- Objeto para el ícono ---
     {
       rel: "icon",
-      href: "/favicon.ico", // Ruta al ícono
-      type: "image/x-icon", // Tipo de imagen (opcional pero recomendado)
+      href: "/favicon.ico",
+      type: "image/x-icon",
     },
   ];
 }
-
 export default function PainSelection() {
   return (
     <div className="selection-page">

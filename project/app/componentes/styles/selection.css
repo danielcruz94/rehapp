@@ -1,37 +1,37 @@
 
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
   font-family: system-ui, sans-serif;
-  
-  
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('/background/seleccion.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: #ffffff; /* Añadimos un color de texto por defecto para el body */
-}
+  color: #ffffff;
 
+  /* Respetar áreas seguras en iPhone */
+  padding-top: env(safe-area-inset-top);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+}
 
 /* =============================================================== */
 
 
-/* Estilos generales de la página */
 .selection-page {
-  padding: 2rem 1.5rem;
-  max-width: 440px; /* Esta es la clave para la consistencia. ¡Bien hecho! */
+  padding: calc(env(safe-area-inset-top) + 2rem) 1.5rem 2rem;
+  max-width: 440px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  /* El fondo se ha movido al body, por lo que esta sección es ahora transparente */
-  min-height: 100vh; /* Asegura que el layout ocupe al menos toda la altura de la pantalla */
+  min-height: 100vh;
 }
 
 /* --- Header --- */
