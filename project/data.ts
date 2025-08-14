@@ -19,6 +19,107 @@ export interface PainType {
 export const data: PainType[] = [
   {
     id: 1,
+    name: "Cuello",
+    icon: "/default/Capa_1.svg",
+    description: "Selecciona si estás experimentando un dolor en el cuello.",
+    link: "issued/neck",
+    img: "/default/Rehapp/img.cuello.svg",
+    backgroundImage: "/background/backgroundcuello.jpg",
+
+    exercise: [
+      {
+        url: "/neck1",
+        name: "Flexiones profundas",
+        difficulty: "fácil",
+        video:
+          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Neck/flexionesProfundas.Neck.mp4",
+      },
+      {
+        url: "/neck2",
+        name: "Rotaciones",
+        difficulty: "fácil",
+        video:
+          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Neck/Rotaciones.Neck.mp4",
+      },
+      {
+        url: "/neck3",
+        name: "Encogimiento hombro",
+        difficulty: "fácil",
+        video:
+          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Neck/EncogimientoHombros.Neck.mp4",
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Manos",
+    icon: "/default/Capa_mano.svg",
+    description: "Selecciona si estás experimentando un dolor en las manos.",
+    link: "issued/wrist",
+    img: "/default/Rehapp/img.manos.png",
+    backgroundImage: "/background/eee1463f38a93c246a646e79c495a57b030b133e.jpg",
+
+    exercise: [
+      {
+        url: "/wrist1",
+        name: "Martillo",
+        difficulty: "fácil",
+        video:
+          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Wrist/martillo.Wrist.mp4",
+      },
+      {
+        url: "/wrist2",
+        name: "Flexo-extensión",
+        difficulty: "medio",
+        video:
+          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Wrist/Flexo-extensio%CC%81n.Wrist.mp4",
+      },
+      {
+        url: "/wrist3",
+        name: "Estiramiento de muñeca",
+        difficulty: "fácil",
+        video:
+          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Wrist/estiramientoMun%CC%83eeca.Wrist.mp4",
+      },
+    ],
+  },
+  
+  
+  {
+    id: 3,
+    name: "Rodilla",
+    icon: "/default/Capa_rodilla.svg",
+    description: "Selecciona si estás experimentando un dolor en la rodilla.",
+    link: "issued/knee",
+    img: "/default/Rehapp/img.rodilla.svg",
+    backgroundImage: "/background/bgRodilla.jpg",
+
+    exercise: [
+      {
+        url: "/knee1",
+        name: "Estiramiento isquiotibiales",
+        difficulty: "fácil",
+        video:
+          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2188.MOV",
+      },
+      {
+        url: "/knee2",
+        name: "Sentadilla isometrica",
+        difficulty: "medio",
+        video:
+          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2189.MOV",
+      },
+      {
+        url: "/knee3",
+        name: "Ascenso unilateral",
+        difficulty: "fácil",
+        video:
+          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2191.MOV",
+      },
+    ],
+  },
+  {
+    id: 4,
     name: "Espalda B",
     icon: "/default/Capa_1-2.svg",
     description:
@@ -81,105 +182,8 @@ export const data: PainType[] = [
       },
     ],
   },
-  {
-    id: 3,
-    name: "Rodilla",
-    icon: "/default/Capa_rodilla.svg",
-    description: "Selecciona si estás experimentando un dolor en la rodilla.",
-    link: "issued/knee",
-    img: "/default/Rehapp/img.rodilla.svg",
-    backgroundImage: "/background/bgRodilla.jpg",
-
-    exercise: [
-      {
-        url: "/knee1",
-        name: "Estiramiento isquiotibiales",
-        difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2188.MOV",
-      },
-      {
-        url: "/knee2",
-        name: "Sentadilla isometrica",
-        difficulty: "medio",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2189.MOV",
-      },
-      {
-        url: "/knee3",
-        name: "Ascenso unilateral",
-        difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2191.MOV",
-      },
-    ],
-  },
-  {
-    id: 4,
-    name: "Cuello",
-    icon: "/default/Capa_1.svg",
-    description: "Selecciona si estás experimentando un dolor en el cuello.",
-    link: "issued/neck",
-    img: "/default/Rehapp/img.cuello.svg",
-    backgroundImage: "/background/backgroundcuello.jpg",
-
-    exercise: [
-      {
-        url: "/cuello",
-        name: "Flexiones profundas",
-        difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2188.MOV",
-      },
-      {
-        url: "/knee2",
-        name: "Rotaciones",
-        difficulty: "medio",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2189.MOV",
-      },
-      {
-        url: "/knee3",
-        name: "Encogimiento hombro",
-        difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2191.MOV",
-      },
-    ],
-  },
-  {
-    id: 5,
-    name: "Manos",
-    icon: "/default/Capa_mano.svg",
-    description: "Selecciona si estás experimentando un dolor en las manos.",
-    link: "issued/wrist",
-    img: "/default/Rehapp/img.manos.png",
-    backgroundImage: "/background/eee1463f38a93c246a646e79c495a57b030b133e.jpg",
-
-    exercise: [
-      {
-        url: "/cuello",
-        name: "Martillo",
-        difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2188.MOV",
-      },
-      {
-        url: "/knee2",
-        name: "Flexo-extensión",
-        difficulty: "medio",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2189.MOV",
-      },
-      {
-        url: "/knee3",
-        name: "Estiramiento de muñeca",
-        difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2191.MOV",
-      },
-    ],
-  },
+  
+  
   {
     id: 6,
     name: "Hombro",
