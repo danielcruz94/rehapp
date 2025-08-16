@@ -43,7 +43,22 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     if (!video) return;
 
     if (exerciseFound?.video) {
-        video.src = exerciseFound.video;
+      let CLOUDFRONT =
+        import.meta.env.VITE_CLOUDFRONT_BASE ||
+        "https://freevideos-reapp.s3.us-east-2.amazonaws.com";
+    
+      // Normaliza: si viene sin protocolo, le ponemos https://
+      if (!CLOUDFRONT.startsWith("http")) {
+        CLOUDFRONT = `https://${CLOUDFRONT}`;
+      }
+    
+      // Reemplaza el host de S3 por CloudFront
+      const src = exerciseFound.video.replace(
+        "https://freevideos-reapp.s3.us-east-2.amazonaws.com",
+        CLOUDFRONT
+      );
+    
+      video.src = src;
     }
 
     const handleTimeUpdate = () => {
@@ -70,6 +85,8 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       video.removeEventListener('ended', handleEnded);
     };
   }, [exerciseFound]); 
+
+  
 
   const togglePlayPause = () => {
     if (videoRef.current) {

@@ -99,21 +99,21 @@ export const data: PainType[] = [
         url: "/knee1",
         name: "Estiramiento Isquiotibiales",
         difficulty: "fácil",
-        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/Estiramiento+Isquiotibiales.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/Estiramiento-Isquiotibiales-optimized.mp4",
         machine: false
       },
       {
         url: "/knee2",
         name: "Sentadilla Isometrica",
         difficulty: "medio",
-        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/Sentadilla+Isometrica.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/Sentadilla-Isometrica-optimized.mp4",
         machine: false
       },
       {
         url: "/knee3",
         name: "Ascenso unilateral",
         difficulty: "fácil",
-        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/Ascenso+unilateral.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/Ascenso-unilateral-optimized.mp4",
         machine: false
       },
     ],
