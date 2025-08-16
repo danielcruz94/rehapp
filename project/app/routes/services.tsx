@@ -94,7 +94,7 @@ export default function service() {
           <div className="header-title">
             <img src={item.icon} alt={`${item.name} icon`} />
             <h2>{item.name}</h2>
-            <Link to={`/issued`}>
+            <Link to={`/issued`} className="back-home-button">
               <svg
                 className="icono-flecha-arriba"
                 xmlns="http://www.w3.org/2000/svg"
