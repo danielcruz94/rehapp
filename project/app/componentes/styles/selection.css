@@ -118,10 +118,15 @@ body {
 }
 
 .option-icon {
-  width: 99px;
+  width: 67px;
   height: 66px;
+  padding-top: 3px;
+  padding-right: 9px;
+  padding-left: 6px;
   filter: brightness(0) invert(1);
 }
+
+
 
 .option-arrow {
   display: flex;

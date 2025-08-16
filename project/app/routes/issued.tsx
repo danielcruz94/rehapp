@@ -43,10 +43,9 @@ export default function PainSelection() {
         <ul className="pain-options-list">
           {data.map((option) => (
             <li key={option.name} className="pain-option-item">
-              {/* 2. Cambia la etiqueta <a> por <Link> y el atributo href por to */}
               <Link to={`/issued/${String(option.id)}`} className="option-card">
                 <div className="option-content">
-                  <img src={option.icon} alt="" className="option-icon" />
+                  <img src={option.icon} alt="icono del dolor" className="option-icon" />
                   <span
                     className={`articulacion ${option.name.length > 8 ? "long-text" : ""}`}
                   >
