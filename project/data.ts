@@ -136,7 +136,7 @@ export const data: PainType[] = [
       },
       {
         url: "/lowerback2",
-        name: "Movilidad lumbopelvica",
+        name: "Movilidad lumbo pélvica",
         difficulty: "fácil",
         video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Espalda+Baja/Movilidad+lumbopelvica.mp4",
         machine: false
@@ -157,7 +157,7 @@ export const data: PainType[] = [
     description: "Selecciona si estás experimentando un dolor en la espalda alta.",
     link: "issued/lowerback",
     img: "/default/Rehapp/img.espalda_alta.svg",
-    backgroundImage: "/background/bgEspaldaAlta.jpg",
+    backgroundImage: "/background/BgEspaldaAlta.jpg",
 
     exercise: [
       {
