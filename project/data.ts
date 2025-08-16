@@ -131,21 +131,21 @@ export const data: PainType[] = [
         url: "/lowerback1",
         name: "Puente glúteo",
         difficulty: "fácil",
-        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Espalda+Baja/puente-gluteo.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Espalda+Baja/puente-gluteo-optimized.mp4",
         machine: false
       },
       {
         url: "/lowerback2",
         name: "Movilidad lumbo pélvica",
         difficulty: "fácil",
-        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Espalda+Baja/Movilidad+lumbopelvica.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Espalda+Baja/Movilidad-lumbopelvica-optimized.mp4",
         machine: false
       },
       {
         url: "/lowerback3",
         name: "Cobra dinámica",
         difficulty: "medio",
-        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Espalda+Baja/cobra-dinamica.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Espalda+Baja/cobra-dinamica-optimized.mp4",
         machine: false
       },
     ],
