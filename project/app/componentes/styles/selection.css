@@ -10,8 +10,8 @@ body {
   font-family: system-ui, sans-serif;
   
   
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('/background/seleccion.jpg');
-  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.91), rgba(0, 0, 0, 0.91)), url('/background/seleccion.jpg');
+ 
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
