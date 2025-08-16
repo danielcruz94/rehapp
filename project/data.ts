@@ -120,7 +120,7 @@ export const data: PainType[] = [
   },
   {
     id: 4,
-    name: "Espalda B",
+    name: "Espalda Baja",
     icon: "/default/Capa_1-2.svg",
     description: "Selecciona si estás experimentando un dolor en la espalda baja.",
     link: "issued/upperback",
@@ -152,7 +152,7 @@ export const data: PainType[] = [
   },
   {
     id: 5,
-    name: "Espalda A",
+    name: "Espalda Alta",
     icon: "/default/Capa_1-3.svg",
     description: "Selecciona si estás experimentando un dolor en la espalda alta.",
     link: "issued/lowerback",
@@ -185,7 +185,7 @@ export const data: PainType[] = [
   },
   {
     id: 6,
-    name: "Hombro",
+    name: " Hombro",
     icon: "/default/Capa_hombro.svg",
     description: "Selecciona si estás experimentando un dolor en los hombros.",
     link: "issued/shoulder",

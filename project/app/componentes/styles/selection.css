@@ -158,9 +158,19 @@ body {
   fill: none;
 }
 
+.option-content .articulacion {
+  font-size: 2rem;
+}
+
+.option-content .articulacion.long-text {
+  font-size: 1.7rem;
+}
+
 @media (max-width: 500px) {
-  /* Haz esta regla más específica para que gane sobre .option-content span */
-  .option-content .articulacion { /* Cambiado de solo .articulacion */
-    font-size: 2rem; /* Este valor ahora debería aplicarse */
+  .option-content .articulacion {
+    font-size: 1.6rem;
+  }
+  .option-content .articulacion.long-text {
+    font-size: 1.5rem;
   }
 }

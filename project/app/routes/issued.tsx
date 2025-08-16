@@ -25,14 +25,16 @@ export default function PainSelection() {
     <div className="selection-page">
       <header className="selection-header">
         <div className="header-info">
-          <img src="default/Group 1.svg" alt="Rehapp Logo" className="header-logo" />
+          <img
+            src="default/Group 1.svg"
+            alt="Rehapp Logo"
+            className="header-logo"
+          />
           <div>
             <h1>¡Bienvenido/a!</h1>
             <span className="subtitle">de vuelta a tu mejor versión</span>
           </div>
         </div>
-
-    
       </header>
 
       <main className="selection-main">
@@ -45,23 +47,27 @@ export default function PainSelection() {
               <Link to={`/issued/${String(option.id)}`} className="option-card">
                 <div className="option-content">
                   <img src={option.icon} alt="" className="option-icon" />
-                  <span className="articulacion">{option.name}</span>
+                  <span
+                    className={`articulacion ${option.name.length > 8 ? "long-text" : ""}`}
+                  >
+                    {option.name}
+                  </span>
                 </div>
                 <div className="option-arrow">
-                <svg 
+                  <svg
                     className="icono-flecha-derecha"
-                    xmlns="http://www.w3.org/2000/svg" 
+                    xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                >
+                  >
                     <title>Flecha Derecha</title>
                     <circle className="linea" cx="12" cy="12" r="11" />
-                    <path 
-                        className="linea"
-                        d="M10 8 L 14 12 L 10 16" 
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                    <path
+                      className="linea"
+                      d="M10 8 L 14 12 L 10 16"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
-                </svg>
+                  </svg>
                 </div>
               </Link>
               <p className="option-description">{option.description}</p>
