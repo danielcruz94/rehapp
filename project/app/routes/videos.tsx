@@ -161,9 +161,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     <div className="video-page-container">
       {/* Título del video */}
       <div className="video-header">
-        <h1 className="video-title">{title}</h1>
        
-        <p className="video-subtitle">{exerciseFound.name}</p>
       </div>
 
       {/* Contenedor principal del reproductor */}
