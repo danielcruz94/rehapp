@@ -3,6 +3,7 @@ export interface Exercise {
   name: string;
   difficulty: string;
   video: string;
+  machine: boolean;
 }
 
 export interface PainType {
@@ -14,6 +15,7 @@ export interface PainType {
   img: string;
   backgroundImage: string;
   exercise: Exercise[];
+  
 }
 
 export const data: PainType[] = [
@@ -31,22 +33,22 @@ export const data: PainType[] = [
         url: "/neck1",
         name: "Flexiones profundas",
         difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Neck/flexionesProfundas.Neck.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Neck/flexionesProfundas.Neck.mp4",
+        machine: false
       },
       {
         url: "/neck2",
         name: "Rotaciones",
         difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Neck/Rotaciones.Neck.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Neck/Rotaciones.Neck.mp4",
+        machine: false
       },
       {
         url: "/neck3",
         name: "Encogimiento hombro",
         difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Neck/EncogimientoHombros.Neck.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Neck/EncogimientoHombros.Neck.mp4",
+        machine: false
       },
     ],
   },
@@ -64,27 +66,25 @@ export const data: PainType[] = [
         url: "/wrist1",
         name: "Martillo",
         difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Wrist/martillo.Wrist.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Wrist/martillo.Wrist.mp4",
+        machine: false
       },
       {
         url: "/wrist2",
         name: "Flexo-extensión",
         difficulty: "medio",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Wrist/Flexo-extensio%CC%81n.Wrist.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Wrist/Flexo-extensio%CC%81n.Wrist.mp4",
+        machine: false
       },
       {
         url: "/wrist3",
         name: "Estiramiento de muñeca",
         difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Wrist/estiramientoMun%CC%83eeca.Wrist.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Wrist/estiramientoMun%CC%83eeca.Wrist.mp4",
+        machine: false
       },
     ],
   },
-  
-  
   {
     id: 3,
     name: "Rodilla",
@@ -97,24 +97,24 @@ export const data: PainType[] = [
     exercise: [
       {
         url: "/knee1",
-        name: "Estiramiento isquiotibiales",
+        name: "Estiramiento Isquiotibiales",
         difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2188.MOV",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/Estiramiento+Isquiotibiales.mp4",
+        machine: false
       },
       {
         url: "/knee2",
-        name: "Sentadilla isometrica",
+        name: "Sentadilla Isometrica",
         difficulty: "medio",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2189.MOV",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/Sentadilla+Isometrica.mp4",
+        machine: false
       },
       {
         url: "/knee3",
         name: "Ascenso unilateral",
         difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2191.MOV",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/Ascenso+unilateral.mp4",
+        machine: false
       },
     ],
   },
@@ -122,68 +122,67 @@ export const data: PainType[] = [
     id: 4,
     name: "Espalda B",
     icon: "/default/Capa_1-2.svg",
-    description:
-      "Selecciona si estás experimentando un dolor en la espalda baja.",
+    description: "Selecciona si estás experimentando un dolor en la espalda baja.",
     link: "issued/upperback",
-    img: "/default/Rehapp/img.espalda_alta.svg",
-    backgroundImage: "/background/BgEspaldaAlta.jpg",
+    img: "/default/Rehapp/img.espaldabaja.svg",
+    backgroundImage: "/background/bgEspaldaBaja.jpg",
     exercise: [
       {
-        url: "/upperback1",
+        url: "/lowerback1",
         name: "Puente glúteo",
         difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Back_Excersises+/IMG_2186.MOV",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Espalda+Baja/puente-gluteo.mp4",
+        machine: false
       },
       {
-        url: "/upperback2",
+        url: "/lowerback2",
         name: "Movilidad lumbopelvica",
         difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Back_Excersises+/IMG_2184.MOV",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Espalda+Baja/Movilidad+lumbopelvica.mp4",
+        machine: false
       },
       {
-        url: "/upperback3",
+        url: "/lowerback3",
         name: "Cobra dinámica",
         difficulty: "medio",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Back_Excersises+/IMG_2187.MOV",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Espalda+Baja/cobra-dinamica.mp4",
+        machine: false
       },
     ],
   },
   {
-    id: 2,
+    id: 5,
     name: "Espalda A",
     icon: "/default/Capa_1-3.svg",
-    description:
-      "Selecciona si estás experimentando un dolor en la espalda alta.",
+    description: "Selecciona si estás experimentando un dolor en la espalda alta.",
     link: "issued/lowerback",
-    img: "/default/Rehapp/img.espaldabaja.svg",
-    backgroundImage: "/background/bgEspaldaBaja.jpg",
+    img: "/default/Rehapp/img.espalda_alta.svg",
+    backgroundImage: "/background/bgEspaldaAlta.jpg",
 
     exercise: [
       {
-        url: "/lowerback1",
-        name: "Extensión y flexión toráxica",
+        url: "/upperback1",
+        name: "Extensión y flexión torácica",
         difficulty: "fácil",
-        video: "/video/lowerback1",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Espalda+Alta/Extension-Flexion-toraxica.mp4",
+        machine: false
       },
       {
-        url: "/lowerback2",
+        url: "/upperback2",
         name: "Trapecio medio",
         difficulty: "fácil",
-        video: "/video/lowerback2",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Espalda+Alta/Trapecio-medio.mp4",
+        machine: false
       },
       {
-        url: "/upperback3",
+        url: "/upperback",
         name: "Retracción escapular",
         difficulty: "fácil",
-        video: "/video/upperback3",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Espalda+Alta/Retraccion-escapular.mp4",
+        machine: false
       },
     ],
   },
-  
-  
   {
     id: 6,
     name: "Hombro",
@@ -195,26 +194,54 @@ export const data: PainType[] = [
 
     exercise: [
       {
-        url: "/cuello",
+        url: "/shoulder1",
         name: "Encogimiento escapular",
         difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2188.MOV",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Hombros/Encogimiento-escapular.mp4",
+        machine: false
       },
       {
-        url: "/knee2",
-        name: "Movilidad toráxica",
-        difficulty: "medio",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2189.MOV",
-      },
-      {
-        url: "/knee3",
-        name: "Circundución de hombro",
+        url: "/shoulder2",
+        name: "Movilidad torácica",
         difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2191.MOV",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Hombros/Movilidad-toraxica.mp4",
+        machine: false
       },
+      {
+        url: "/shoulder3",
+        name: "Circunducción de hombro",
+        difficulty: "medio",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Hombros/circunduccion-hombro.mp4",
+        machine: false
+      },
+      // {
+      //   url: "/shoulder4",
+      //   name: "rotaciones externas contra resistencia",
+      //   difficulty: "medio",
+      //   video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Hombros/rotacion-externa-contra-resistencia.mp4",
+      //   machine: false
+      // },
+      // {
+      //   url: "/shoulder5",
+      //   name: "T- Escapular",
+      //   difficulty: "medio",
+      //   video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Hombros/T-escapular.mp4",
+      //   machine: false
+      // },
+      // {
+      //   url: "/shoulder6",
+      //   name: "Press Hombro Asistido",
+      //   difficulty: "fácil",
+      //   video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Hombros/Press-hombro+asistido.mp4",
+      //   machine: false
+      // },
+      // {
+      //   url: "/shoulder7",
+      //   name: "Curl femoral Balón",
+      //   difficulty: "medio",
+      //   video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Hombros/curl+-femoral-balon.mp4",
+      //   machine: false
+      // },
     ],
   },
   {
@@ -228,25 +255,25 @@ export const data: PainType[] = [
 
     exercise: [
       {
-        url: "/cuello",
+        url: "/ankle1",
         name: "Dorsiflexión",
-        difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2188.MOV",
+        difficulty: "medio",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Tobillos/dorsiflexion.mp4",
+        machine: false
       },
       {
-        url: "/knee2",
+        url: "/ankle2",
         name: "Plantiflexión",
         difficulty: "medio",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2189.MOV",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Tobillos/platiflexion.mp4",
+        machine: false
       },
       {
-        url: "/knee3",
-        name: "Movilidad",
+        url: "/ankle3",
+        name: "Movilidad tobillo",
         difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2191.MOV",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Tobillos/movilidad-tobillo.mp4",
+        machine: false
       },
     ],
   },
@@ -261,25 +288,25 @@ export const data: PainType[] = [
 
     exercise: [
       {
-        url: "/cuello",
+        url: "/hips1",
         name: "Movilidad de cadera",
         difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2188.MOV",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Cadera/movilidad-cadera.mp4",
+        machine: false
       },
       {
-        url: "/knee2",
+        url: "/hips2",
         name: "Flexión y abducción",
-        difficulty: "medio",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2189.MOV",
+        difficulty: "fácil",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Cadera/abduccion-flexion-cadera.mp4",
+        machine: false
       },
       {
-        url: "/knee3",
+        url: "/hips3",
         name: "Extensión de cadera",
-        difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2191.MOV",
+        difficulty: "medio",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Cadera/Extension-cadera.mp4",
+        machine: false
       },
     ],
   },
@@ -294,25 +321,25 @@ export const data: PainType[] = [
 
     exercise: [
       {
-        url: "/cuello",
+        url: "/elbow1",
         name: "Extensión de muñeca",
         difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2188.MOV",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Codo/Extensio-mun%CC%83eca.mp4",
+        machine: false
       },
       {
-        url: "/knee2",
+        url: "/elbow2",
         name: "Flexión de muñeca",
-        difficulty: "medio",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2189.MOV",
+        difficulty: "fácil",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Codo/Flexion-mun%CC%83eca.mp4",
+        machine: false
       },
       {
-        url: "/knee3",
+        url: "/elbow3",
         name: "Prono-supinación",
         difficulty: "fácil",
-        video:
-          "https://freevideos-reapp.s3.us-east-2.amazonaws.com/knee-Exercises/IMG_2191.MOV",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Codo/Prono-supinacion.mp4",
+        machine: false
       },
     ],
   },
