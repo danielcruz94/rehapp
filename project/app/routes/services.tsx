@@ -82,7 +82,7 @@ export default function service() {
 
   const backgroundStyle = {
     backgroundImage: `
-      linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+      linear-gradient(rgba(0, 0, 0, 0.91), rgba(0, 0, 0, 0.91)),
       url(${item.backgroundImage})
     `
   };
