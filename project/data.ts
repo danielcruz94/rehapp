@@ -258,21 +258,21 @@ export const data: PainType[] = [
         url: "/ankle1",
         name: "Dorsiflexión",
         difficulty: "medio",
-        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Tobillos/dorsiflexion.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Tobillos/dorsiflexion-optimized.mp4",
         machine: false
       },
       {
         url: "/ankle2",
         name: "Plantiflexión",
         difficulty: "medio",
-        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Tobillos/platiflexion.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Tobillos/platiflexion-optimized.mp4",
         machine: false
       },
       {
         url: "/ankle3",
         name: "Movilidad tobillo",
         difficulty: "fácil",
-        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Tobillos/movilidad-tobillo.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Tobillos/movilidad-tobillo-optimized.mp4",
         machine: false
       },
     ],
