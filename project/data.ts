@@ -66,21 +66,21 @@ export const data: PainType[] = [
         url: "/wrist1",
         name: "Martillo",
         difficulty: "fácil",
-        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Wrist/martillo.Wrist.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Wrist/martillo.Wrist-optimized.mp4",
         machine: false
       },
       {
         url: "/wrist2",
         name: "Flexo-extensión",
         difficulty: "medio",
-        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Wrist/Flexo-extensio%CC%81n.Wrist.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Wrist/Flexo-extensio%CC%81n.Wrist-optimized.mp4",
         machine: false
       },
       {
         url: "/wrist3",
         name: "Estiramiento de muñeca",
         difficulty: "fácil",
-        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Wrist/estiramientoMun%CC%83eeca.Wrist.mp4",
+        video: "https://freevideos-reapp.s3.us-east-2.amazonaws.com/Wrist/estiramientoMun%CC%83eeca.Wrist-optimized.mp4",
         machine: false
       },
     ],
